@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block title %}Vehículos Antiguos{% endblock %}
+{% block content %}
+<h2 class="text-center mb-4">Vehículos Antiguos</h2>
+<p class="text-center">Los primeros autos cambiaron el mundo para siempre.</p>
+
+<div class="row">
+  <div class="col-md-4">
+    <h5>Bugatti Type 35</h5>
+    <img src="https://cdn.pixabay.com/photo/2016/07/06/15/16/bugatti-1506903_1280.jpg" class="img-fluid rounded" alt="Bugatti">
+  </div>
+  <div class="col-md-4">
+    <h5>Ford Model T</h5>
+    <img src="https://cdn.pixabay.com/photo/2016/04/01/11/29/ford-1308695_1280.jpg" class="img-fluid rounded" alt="Ford">
+  </div>
+  <div class="col-md-4">
+    <h5>Mustang 1967</h5>
+    <img src="https://cdn.pixabay.com/photo/2015/03/26/10/43/ford-690233_1280.jpg" class="img-fluid rounded" alt="Mustang">
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h5>Lamborghini Miura</h5>
+    <img src="https://cdn.pixabay.com/photo/2018/03/30/21/10/lamborghini-3270218_1280.jpg" class="img-fluid rounded" alt="Lamborghini">
+  </div>
+  <div class="col-md-6">
+    <h5>Toyota 2000GT</h5>
+    <img src="https://cdn.pixabay.com/photo/2014/04/06/17/41/toyota-318038_1280.jpg" class="img-fluid rounded" alt="Toyota">
+  </div>
+</div>
+{% endblock %}
