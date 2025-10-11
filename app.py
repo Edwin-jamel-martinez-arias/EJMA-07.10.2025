@@ -8,7 +8,7 @@ autor = "Edwin Jamel Martínez Arias"
 # Página de inicio
 @app.route('/')
 def inicio():
-    return render_template('index.html', autor=autor)
+    return render_template('base.html', autor=autor)
 
 # Página de animales
 @app.route('/animales')
@@ -32,4 +32,5 @@ def acercade():
 
 # Ejecutar la app
 if __name__ == '__main__':
+
     app.run(debug=True)
