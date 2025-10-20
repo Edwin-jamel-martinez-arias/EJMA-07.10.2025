@@ -5,88 +5,120 @@ Crea una cuenta - Registro de Usuario
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center">Crea una cuenta</h1>
-<p class="text-center">Es rápido y fácil</p>
+<div class="row justify-content-center my-5">
+    <div class="col-lg-7 col-md-9 col-sm-12">
+        <div class="card shadow-lg border-0 rounded-lg">
+            
+            <div class="card-header bg-secondary text-white text-center py-3">
+                <h2 class="mb-0">Crea tu Cuenta</h2>
+                <p class="mb-0 text-white-50">Es rápido, fácil y seguro.</p>
+            </div>
+            
+            <div class="card-body p-4 p-md-5">
+                <form method="POST">
+                    
+                    <h5 class="mb-3 text-secondary">Información de Contacto</h5>
+                    <div class="mb-4">
+                        <label for="email" class="form-label text-muted">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="form-control" 
+                            placeholder="ejemplo@correo.com" minlength="5" maxlength="100" required>
+                    </div>
 
-<form method="POST" action="{{ url_for('register_user') }}">
-    <section class="row">
-        <div class="col-6 mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                value="{{ request.form.get('nombre', '') }}" required>
-        </div>
-        <div class="col-6 mb-3">
-            <label for="apellido" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos" 
-                value="{{ request.form.get('apellido', '') }}">
-        </div>
-    </section>
+                    <h5 class="mb-3 text-secondary">Datos Personales</h5>
+                    <section class="row">
+                        <div class="col-md-6 mb-4">
+                            <label for="nombre" class="form-label text-muted">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre" 
+                                minlength="2" maxlength="50" required>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label for="apellido" class="form-label text-muted">Apellidos</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus Apellidos" 
+                                minlength="2" maxlength="80" required>
+                        </div>
+                    </section>
+                    
+                    <label class="form-label text-secondary mb-2">Fecha de Nacimiento</label>
+                    <section class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <select class="form-select" id="dia" name="dia" aria-label="Día de nacimiento" required>
+                                    <option value="" selected>Día</option>
+                                    {% for i in range(1, 32) %}
+                                    <option value="{{ i }}">{{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="dia">Día</label>
+                            </div>
+                        </div>
 
-    <section class="row">
-        <div class="col-4 mb-3">
-            <div class="form-floating">
-                <select class="form-select" id="dia" name="dia" aria-label="Select Día">
-                    <option >Día</option>
-                    <option >1</option>
-                    <option >2</option>
-                    <option >3</option>
-                </select>
-                <label for="dia">Día</label>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <select class="form-select" id="mes" name="mes" aria-label="Mes de nacimiento" required>
+                                    <option value="" selected>Mes</option>
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                                <label for="mes">Mes</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="anio" name="anio" placeholder="Año" 
+                                    minlength="4" maxlength="4" required>
+                                <label for="anio">Año</label>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <label class="form-label text-secondary">Género</label>
+                    <div class="d-flex mb-4">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="mujer" name="genero" value="mujer" required>
+                            <label class="form-check-label" for="mujer">Mujer</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="hombre" name="genero" value="hombre">
+                            <label class="form-check-label" for="hombre">Hombre</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="personalizado" name="genero" value="personalizado">
+                            <label class="form-check-label" for="personalizado">Personalizado</label>
+                        </div>
+                    </div>
+
+                    <h5 class="mb-3 text-secondary">Seguridad</h5>
+                    <div class="mb-3">
+                        <input type="password" id="clave" name="clave" class="form-control" 
+                            placeholder="Contraseña" minlength="8" maxlength="50" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input type="password" id="confirmar_clave" name="confirmar_clave" class="form-control" 
+                            placeholder="Confirma Contraseña" minlength="8" maxlength="50" required>
+                        <div id="passwordHelpBlock" class="form-text text-muted">
+                            Tu contraseña debe contener al menos 8 caracteres.
+                        </div>
+                    </div>
+
+                    <section class="mt-4 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg me-2">Registrarme</button>
+                        <button type="reset" class="btn btn-outline-secondary btn-lg">Limpiar</button>
+                    </section>
+                </form>
             </div>
         </div>
-
-        <div class="col-4 mb-3">
-            <div class="form-floating">
-                <select class="form-select" id="mes" name="mes" aria-label="Select Mes">
-                    <option >Mes</option>
-                    <option >Enero</option>
-                    <option >Febrero</option>
-                    <option >Marzo</option>
-                </select>
-                <label for="mes">Mes</label>
-            </div>
-        </div>
-
-        <div class="col-4 mb-3 text-end">
-            <div class="form-floating">
-                <input type="number" class="form-control" id="anacimiento" name="anacimiento" placeholder="Año"
-                    value="{{ request.form.get('anacimiento', '') }}">
-                <label for="anacimiento">Año</label>
-            </div>
-        </div>
-    </section>
-
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="mujer" name="genero" value="mujer" 
-        >label> class="form-check-label" for="mujer">Mujer</label>
     </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="hombre" name="genero" value="hombre" {
-        label class="form-check-label" for="hombre">Hombre</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="personalizado" name="genero" value="personalizado" 
-        
-        label class="form-check-label" for="personalizado">Personalizado</label>
-    </div>
-
-    <input class="form-control mt-3" type="email" id="email" name="email"
-        placeholder="Correo electrónico o número de teléfono" value="{{ request.form.get('email', '') }}" required>
-
-    <input type="password" id="contrasena" name="contrasena" class="form-control mt-3" placeholder="Contraseña"
-        aria-describedby="passwordHelpBlock" required>
-
-    <input type="password" id="confirmacion" name="confirmacion" class="form-control mt-3"
-        placeholder="confirma contraseña" aria-describedby="passwordHelpBlock" required>
-
-    <div id="passwordHelpBlock" class="form-text">
-        tu contraseña debe contener al menos 8 caracteres para que sea segura
-    </div>
-
-
-    <section class="mt-4 text-center">
-        <button type="submit" class="btn btn-primary me-2">Registrarme</button>
-        <button type="reset" class="btn btn-secondary">Limpiar</button>
-    </section>
-</form>
+</div>
 {% endblock %}
