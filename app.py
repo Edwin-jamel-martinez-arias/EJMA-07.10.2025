@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 # Necesario para que 'flash' funcione
-app.secret_key = 'tu_clave_secreta_aqui' 
+app.secret_key = 'tu_clave_secreta_aqui'
 
 autor = "Edwin Jamel Martínez Arias"
 
