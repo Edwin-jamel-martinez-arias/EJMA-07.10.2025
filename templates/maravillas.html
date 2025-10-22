@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Maravillas del Mundo{% endblock %}
+{% block content %}
+<h2 class="text-center mb-4">Las 7 Maravillas del Mundo</h2>
+<p class="text-center">Obras majestuosas que muestran el ingenio y la historia de la humanidad.</p>
+
+<div class="row text-center">
+    <div class="col-md-4 mb-3">
+        <strong>Chichén Itzá</strong>
+        <img src="{{ url_for('static', filename='mexico.jpg') }}" class="img-fluid rounded my-2"
+            alt="Chichén Itzá">
+        <br><a href="https://youtu.be/9N6V7tI4Dyw" target="_blank">Ver video</a>
+    </div>
+    <div class="col-md-4 mb-3">
+        <strong>Coliseo Romano</strong>
+        <img src="{{ url_for('static', filename='italia.jpg') }}" class="img-fluid rounded my-2"
+            alt="Coliseo Romano">
+        <br><a href="https://youtu.be/zJ0_8zAaX6o" target="_blank">Ver video</a>
+    </div>
+    <div class="col-md-4 mb-3">
+        <strong>Petra</strong>
+        <img src="{{ url_for('static', filename='jordania.jpg') }}" class="img-fluid rounded my-2" alt="Petra">
+        <br><a href="https://youtu.be/Mpo5Rtp0Jtk" target="_blank">Ver video</a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <strong>Machu Picchu</strong>
+        <img src="{{ url_for('static', filename='peru.jpg') }}" class="img-fluid rounded my-2"
+            alt="Machu Picchu">
+        <br><a href="https://youtu.be/XiZr2B5B8j0" target="_blank">Ver video</a>
+    </div>
+    <div class="col-md-4 mb-3">
+        <strong>Cristo Redentor</strong>
+        <img src="{{ url_for('static', filename='brazil.jpg') }}" class="img-fluid rounded my-2"
+            alt="Cristo Redentor">
+        <br><a href="https://youtu.be/8Y0y1sQ7-4E" target="_blank">Ver video</a>
+    </div>
+    <div class="col-md-4 mb-3">
+        <strong>Taj Mahal</strong>
+        <img src="{{ url_for('static', filename='india.jpg') }}" class="img-fluid rounded my-2" alt="Taj Mahal">
+        <br><a href="https://youtu.be/E3C8Upb1R2E" target="_blank">Ver video</a>
+    </div>
+
+    <div class="col-md-12 mb-3">
+        <strong>Muralla China</strong>
+        <div class="col-md-6 mx-auto">       <img src="{{ url_for('static', filename='china.jpg') }}"
+                class="img-fluid rounded my-2" alt="Muralla China">
+        </div>
+        <br><a href="https://youtu.be/ZHfXj3JqkXk" target="_blank">Ver video</a>
+    </div>
+</div>
+{% endblock %}

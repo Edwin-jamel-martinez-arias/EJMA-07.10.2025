@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Animales Exóticos{% endblock %}
+{% block content %}
+<h2 class="text-center mb-4">Animales Exóticos</h2>
+
+<div class="row">
+    <div class="col-md-12 mb-3">
+        <h4>Acuáticos</h4>
+    </div>
+    <div class="col-md-6">
+        <p><strong>Foca:</strong> Mamífero marino ágil y juguetón.</p>
+        <img src="{{ url_for('static', filename='foca.jpg') }}" class="img-fluid rounded" alt="Foca">
+    </div>
+    <div class="col-md-6">
+        <p><strong>Orca:</strong> Inteligente depredador de los océanos.</p>
+        <img src="{{ url_for('static', filename='orca.png') }}" class="img-fluid rounded" alt="Orca">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12 mb-3">
+        <h4>Terrestres</h4>
+    </div>
+    <div class="col-md-6">
+        <p><strong>Leopardo:</strong> Felino veloz y sigiloso.</p>
+        <img src="{{ url_for('static', filename='leopardo.jpeg') }}" class="img-fluid rounded" alt="Leopardo">
+    </div>
+    <div class="col-md-6">
+        <p><strong>Kiwi:</strong> Ave no voladora de Nueva Zelanda.</p>
+        <img src="{{ url_for('static', filename='kiwisino.jpg') }}" class="img-fluid rounded" alt="Kiwi">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12 mb-3">
+        <h4>Aéreos</h4>
+    </div>
+    <div class="col-md-6">
+        <p><strong>Águila:</strong> Símbolo de fuerza y libertad.</p>
+        <img src="{{ url_for('static', filename='aguila.jpg') }}" class="img-fluid rounded" alt="Águila">
+    </div>
+    <div class="col-md-6">
+        <p><strong>Halcón:</strong> Ave cazadora de gran velocidad.</p>
+        <img src="{{ url_for('static', filename='halcon.jpg') }}" class="img-fluid rounded" alt="Halcón">
+    </div>
+</div>
+
+{% endblock %}

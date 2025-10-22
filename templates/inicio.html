@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="row text-center">
+    <div class="col-12 mb-4">
+        <h1>Bienvenido a mi página 🌟</h1>
+        <p class="lead">
+            En este sitio encontrarás información sobre animales exóticos, vehículos antiguos y las maravillas del
+            mundo. Mucha de esta información podría resultarte bastante
+            interesante. ¡Disfruta de la página!
+        </p>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <img src="{{ url_for('static', filename='peru.jpg') }}" class="img-fluid rounded shadow-sm"
+            alt="Naturaleza">
+        <p class="mt-2 text-muted">Explora el mundo animal.</p>
+    </div>
+    <div class="col-md-6 mb-3">
+        <img src="{{ url_for('static', filename='forT.jpg') }}" class="img-fluid rounded shadow-sm" alt="Viaje">
+        <p class="mt-2 text-muted">Descubre lugares y máquinas históricas.</p>
+    </div>
+</div>
+{% endblock %}
