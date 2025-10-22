@@ -1,5 +1,5 @@
 # EJMA-07.10.2025
-##plantillas y fromularios
+## plantillas y formularios
 
 Edwin jamel martinez arias
 3-D
